@@ -41,6 +41,12 @@ Song *DLL::pop() { //does what you'd think
 }
 
 void DLL::printList() {
+	DNode *temp = first;
+	while(temp != NULL){
+		temp->song->printSong();
+		temp = temp->next;
+	}
+
 }
 
 void DLL::moveUp(string s) {

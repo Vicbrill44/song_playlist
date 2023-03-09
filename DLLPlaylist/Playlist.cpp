@@ -50,7 +50,7 @@ Playlist::Playlist(string s) {
 //	La Bamba, Richie Valens ................3:29
 //	Margaritaville, Jimmy Buffett................2:55
 //	*/
-//	//list->printList();  // uncomment out this line to test your printlist method.
+	list->printList();  // uncomment out this line to test your printlist method.
 //
 //	cout << endl;
 ///*****************************************************************************************/
