@@ -37,13 +37,20 @@ void DLL::push(string n, string a, int m, int s) {  // does what you'd think
 	numSongs += 1;
 
 }
+//pops the last node in list and returns that node
 Song *DLL::pop() { //does what you'd think
-	DNode *temp = last;
+	Song *lastSong = last->song;
+	last = last->prev; //if no songs before last, then last will be NULL
+	numSongs -= 1;
 
-	last = last->prev;
-	last->next = NULL;
+	if(numSongs == 0){
+		first = NULL;
+	}
+	else{
+		last->next=NULL; //memory clean up
+	}
 
-	return temp->song;
+	return lastSong;
 
 }
 
