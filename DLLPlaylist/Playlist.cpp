@@ -50,9 +50,9 @@ Playlist::Playlist(string s) {
 //	La Bamba, Richie Valens ................3:29
 //	Margaritaville, Jimmy Buffett................2:55
 //	*/
-	list->printList();  // uncomment out this line to test your printlist method.
+	//list->printList();  // uncomment out this line to test your printlist method.
 //
-//	cout << endl;
+	//cout << endl;
 ///*****************************************************************************************/
 //	// (5 pts) Step 3:  list->pop();
 	//Write the method list->pop();  This method removes the last node from the list
@@ -60,10 +60,11 @@ Playlist::Playlist(string s) {
 //	// NOTE:  THIS METHOD SHOULD NOT TRAVERSE THE ENTIRE LIST!!!!
 //
 //	//When written, uncomment out the code below.
-//	list->pop();
-//	list->printList();
-//	list->pop();
-//	list->printList();
+	list->pop();
+	list->printList();
+	cout<<"--------"<<endl;
+	list->pop();
+	list->printList();
 
 
 //	// YOu should get:
@@ -87,7 +88,7 @@ Playlist::Playlist(string s) {
 //	Black Magic Woman, Santana................3:16
 //	*/
 //
-//	cout << endl;
+	cout << endl;
 ///*****************************************************************************************/
 //	/*(10 pts) Step 4:  Write the method list->remove(title);
 //	 * This Method goes through your list, finds a title, and removes that node from the list.  It

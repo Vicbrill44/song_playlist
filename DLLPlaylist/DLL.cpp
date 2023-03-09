@@ -38,7 +38,15 @@ void DLL::push(string n, string a, int m, int s) {  // does what you'd think
 
 }
 Song *DLL::pop() { //does what you'd think
+	DNode *temp = last;
+
+	last = last->prev;
+	last->next = NULL;
+
+	return temp->song;
+
 }
+
 
 void DLL::printList() {
 	DNode *temp = first;
