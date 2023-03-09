@@ -21,6 +21,20 @@ DLL::DLL(string t, string l, int m, int s){  // constructor, initializes a list 
 	numSongs=1;
 }
 void DLL::push(string n, string a, int m, int s) {  // does what you'd think
+	DNode *newNode = new DNode(n,a,m,s);
+
+	if(numSongs == 0){
+		first = newNode;
+		last = newNode;
+	}
+	else{
+		newNode->prev = last;
+		last->next = newNode;
+		last = newNode;
+
+	}
+	numSongs += 1;
+
 }
 Song *DLL::pop() { //does what you'd think
 }

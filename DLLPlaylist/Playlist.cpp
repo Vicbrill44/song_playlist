@@ -27,7 +27,7 @@ Playlist::Playlist(string s) {
 //	//possible your push method works, but you won't know for sure until you complete Step 2
 //	//(Below)
 //
-//	readList(s);  // uncomment this line to test the push method you wrote in the DLL.cpp file.
+	readList(s);  // uncomment this line to test the push method you wrote in the DLL.cpp file.
 //
 //
 //
