@@ -20,6 +20,7 @@ DLL::DLL(string t, string l, int m, int s){  // constructor, initializes a list 
 	last = n;
 	numSongs=1;
 }
+//here I'm pushing to the end of the list
 void DLL::push(string n, string a, int m, int s) {  // does what you'd think
 	DNode *newNode = new DNode(n,a,m,s);
 
