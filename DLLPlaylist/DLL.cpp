@@ -73,8 +73,53 @@ void DLL::moveDown(string s) {
 }
 void DLL::makeRandom() {
 }
+
 int DLL::remove(string s) {
 // note that the int returned is the index - this is standard for a remove, but we won't be using it.
+	DNode *temp = first;
+	int counter = 0;
+	if(numSongs > 0){
+		//find the node
+		while(temp->song->title != s){
+			temp = temp->next;
+			counter += 1;
+			cout<<"while loop?"<<endl;
+		}
+
+		if(temp->prev == NULL){
+			//do code for if the song is the first song
+			first = first->next;
+			numSongs -= 1;
+			if(numSongs == 0){
+				last = NULL;
+			}
+			else{
+				first->prev = NULL; //whatever was behind us now needs to equal null
+			}
+			return 0;
+
+		}
+		else if(temp->next == NULL){
+			//run the code if the song is the last song
+			pop();
+			return counter;
+		}
+		else{
+			//run the code if we are somewhere in the middle
+			cout<<"middle check"<<endl;
+			temp->prev->next = temp->next;
+			temp->next->prev = temp->prev;
+			//memory clean
+			temp->song = NULL;
+			temp = temp->prev = temp->next = NULL;
+
+			numSongs -= 1;
+			return counter;
+		}
+
+	}
+	return -1;
+
 }
 
 
