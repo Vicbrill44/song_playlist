@@ -65,6 +65,72 @@ void DLL::printList() {
 }
 
 void DLL::moveUp(string s) {
+	DNode *temp = first;
+	while(temp->song->title != s){
+		temp = temp->next;
+	}
+
+	DNode *prevNode = temp->prev;
+	DNode *nextNode = temp->next;
+	DNode *prevPrevNode = prevNode->prev;
+
+	//check if the node that temp will be behind (behind buddy) exist at all, if it does then make behind buddy next pointer equal to temp
+	//if not then dont because obviously it will not exist, itll be nullptr, so nothing needs to be done
+	if(prevNode->prev != nullptr){
+		prevPrevNode->next = temp;
+	}
+
+	temp->next = prevNode;
+	temp->prev = prevPrevNode;
+	prevNode->prev = temp;
+
+	prevNode->next = nextNode;
+
+	if(prevNode->next != nullptr){
+		nextNode->prev = prevNode;
+	}
+
+	if(temp->prev == nullptr){
+		first = temp;
+	}
+
+
+
+
+
+
+	/*
+	//temp is the first thing in the list
+	if(temp->prev == NULL){
+		//code that makes temp the last node, if it was first node to begin with
+
+
+	}
+	//code that moves temp up one node if it is second to last to begin with
+	else if(temp->prev == first){
+
+		temp->prev->next = temp->next;
+		temp->next->prev = temp->prev;
+		temp->next = temp->prev;
+		temp->prev->prev = temp;
+		temp->prev = NULL;
+		first = temp;
+
+
+	}
+	//code that moves temp up one node if it is somewhere in the middle to begin with
+	else{
+
+		temp->prev->prev->next = temp;
+		temp->next->prev = temp->prev;
+		temp->prev->next = temp->next;
+		temp->next = temp->prev;
+		temp->prev->prev = temp;
+
+	}
+	*/
+
+
 }
 
 void DLL::listDuration(int *tm, int *ts) {
@@ -83,7 +149,6 @@ int DLL::remove(string s) {
 		while(temp->song->title != s){
 			temp = temp->next;
 			counter += 1;
-			cout<<"while loop?"<<endl;
 		}
 
 		if(temp->prev == NULL){
@@ -106,7 +171,6 @@ int DLL::remove(string s) {
 		}
 		else{
 			//run the code if we are somewhere in the middle
-			cout<<"middle check"<<endl;
 			temp->prev->next = temp->next;
 			temp->next->prev = temp->prev;
 			//memory clean

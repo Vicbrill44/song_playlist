@@ -98,6 +98,7 @@ Playlist::Playlist(string s) {
 //	 *
 //	 *
 //	 */
+	cout<<"removing"<<endl;
 	list->remove("Don't Be Cruel");  // removes from middle of list
 	cout << endl;
 	list->printList();
@@ -107,6 +108,7 @@ Playlist::Playlist(string s) {
 	list->remove("Let it Be");  // removes first.
 	cout << endl;
 	list->printList();
+	cout << endl;
 //
 //
 //	/*  You should get:
@@ -144,10 +146,10 @@ Playlist::Playlist(string s) {
 //	 * After removing and popping, the list is getting a bit short
 //	 */
 //
-//	list->push("Don't Be Cruel", "Elvis Presley", 4,43);
-//	list->push("Black Magic Woman", "Santana", 3,16);
-//	list->push("Let it Be", "Beatles", 3, 11);
-//	list->printList();
+	list->push("Don't Be Cruel", "Elvis Presley", 4,43);
+	list->push("Black Magic Woman", "Santana", 3,16);
+	list->push("Let it Be", "Beatles", 3, 11);
+	list->printList();
 //
 //
 //	/* Now the list should be:
@@ -173,15 +175,17 @@ Playlist::Playlist(string s) {
 //	 * Once you have it written, uncomment out the code below:
 //	 */
 //
-//	cout << "Moving Great Balls of Fire  up one" << endl << endl;
-//	list->moveUp("Great Balls of Fire");
-//	list->printList();
-//	cout << "Moving Great Balls of Fire  up one" << endl << endl;
-//	list->moveUp("Great Balls of Fire");
-//	list->printList();
-//	cout << "Moving Great Balls of Fire  up one" << endl<< endl;
-//	list->moveUp("Great Balls of Fire");
-//	list->printList();
+	cout<<"---------------"<<endl;
+	cout << "Moving Great Balls of Fire up one" << endl << endl;
+	list->moveUp("Great Balls of Fire");
+	list->printList();
+	cout<<"---------------"<<endl;
+	cout << "Moving Great Balls of Fire up one" << endl << endl;
+	list->moveUp("Great Balls of Fire");
+	list->printList();
+	//cout << "Moving Great Balls of Fire  up one" << endl<< endl;
+	//list->moveUp("Great Balls of Fire");
+	//list->printList();
 //
 //
 //	/* YOur output should be:
