@@ -183,9 +183,10 @@ Playlist::Playlist(string s) {
 	cout << "Moving Great Balls of Fire up one" << endl << endl;
 	list->moveUp("Great Balls of Fire");
 	list->printList();
-	//cout << "Moving Great Balls of Fire  up one" << endl<< endl;
-	//list->moveUp("Great Balls of Fire");
-	//list->printList();
+	cout<<"---------------"<<endl;
+	cout << "Moving Great Balls of Fire  up one" << endl<< endl;
+	list->moveUp("Great Balls of Fire");
+	list->printList();
 //
 //
 //	/* YOur output should be:
