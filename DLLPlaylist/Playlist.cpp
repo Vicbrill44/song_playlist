@@ -242,15 +242,18 @@ Playlist::Playlist(string s) {
 //	 * Once you have it written, uncomment out the code below:
 //	 */
 //
-//	cout << "Moving Black Magic Woman  down one" << endl << endl;
-//	list->moveDown("Black Magic Woman");
-//	list->printList();
-//	cout << "Moving Black Magic Woman  down one" << endl << endl;
-//	list->moveDown("Black Magic Woman");
-//	list->printList();
-//	cout << "Moving Black Magic Woman  down one" << endl<< endl;
-//	list->moveDown("Black Magic Woman");
-//	list->printList();
+	cout<<"---------------"<<endl;
+	cout << "Moving Black Magic Woman  down one" << endl << endl;
+	list->moveDown("Black Magic Woman");
+	list->printList();
+	cout<<"---------------"<<endl;
+	cout << "Moving Black Magic Woman  down one" << endl << endl;
+	list->moveDown("Black Magic Woman");
+	list->printList();
+	cout<<"---------------"<<endl;
+	cout << "Moving Black Magic Woman  down one" << endl<< endl;
+	list->moveDown("Black Magic Woman");
+	list->printList();
 //
 //	/* YOur output should be:
 //	 * Moving Black Magic Woman  down one

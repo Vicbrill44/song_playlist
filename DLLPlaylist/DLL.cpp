@@ -98,10 +98,11 @@ void DLL::moveUp(string s) {
 		DNode *nextNode = temp->next;
 
 		last->next = first;
-		first->prev = last;
-		first->next = NULL;
+		temp->prev = last;
+		temp->next = NULL;
 		nextNode->prev = NULL;
 		first = nextNode;
+		last = temp;
 	}
 
 }
@@ -109,6 +110,45 @@ void DLL::moveUp(string s) {
 void DLL::listDuration(int *tm, int *ts) {
 }
 void DLL::moveDown(string s) {
+	DNode *temp = first;
+	while(temp->song->title != s){
+		temp = temp->next;
+	}
+
+	if(temp->next != nullptr){
+		DNode *nextNode = temp->next;
+		DNode *prevNode = temp->prev;
+		DNode *nextNextNode = nextNode->next;
+
+		if(nextNode->next != nullptr){
+			nextNextNode->prev = temp;
+		}
+
+		temp->next = nextNextNode;
+		temp->prev = nextNode;
+		nextNode->next = temp;
+
+		nextNode->prev = prevNode;
+
+		if(nextNode->prev != nullptr){
+			prevNode->next = nextNode;
+		}
+
+		if(temp->next == nullptr){
+			last = temp;
+		}
+	}
+	else{
+		DNode *prevNode = temp->prev;
+
+		first->prev = last;
+		temp->next = first;
+		temp->prev = NULL;
+		prevNode->next = NULL;
+		last = prevNode;
+		first = temp;//did where i fucked up
+	}
+
 
 
 }
