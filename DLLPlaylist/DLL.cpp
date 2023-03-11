@@ -108,6 +108,15 @@ void DLL::moveUp(string s) {
 }
 
 void DLL::listDuration(int *tm, int *ts) {
+	DNode *temp = first;
+	while(temp != NULL){
+		*tm += temp->song->min;
+		*ts += temp->song->sec;
+
+		temp = temp->next;
+	}
+
+
 }
 void DLL::moveDown(string s) {
 	DNode *temp = first;

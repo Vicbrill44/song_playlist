@@ -310,22 +310,23 @@ Playlist::Playlist(string s) {
 //	 */
 //
 //
-//	list->printList();
-//	int mintot = 0;
-//	int sectot = 0;
-//	list->listDuration(&mintot, &sectot);
-//	mintot += sectot/60;
-//	sectot = sectot%60;
-//	int hr = 0;
-//	if (mintot>=60) {
-//		hr = mintot/60;
-//		mintot %= 60;
-//	}
-//	cout << "The total playlist time is ";
-//	hr>0?cout<<hr<<":":cout<<" ";
-//	cout<< mintot<<":";
-//	sectot<10?cout<<"0"<<sectot:cout<<sectot;
-//	cout << endl<<flush;
+	cout<<"---------------"<<endl;
+	list->printList();
+	int mintot = 0;
+	int sectot = 0;
+	list->listDuration(&mintot, &sectot);
+	mintot += sectot/60;
+	sectot = sectot%60;
+	int hr = 0;
+	if (mintot>=60) {
+		hr = mintot/60;
+		mintot %= 60;
+	}
+	cout << "The total playlist time is ";
+	hr>0?cout<<hr<<":":cout<<" ";
+	cout<< mintot<<":";
+	sectot<10?cout<<"0"<<sectot:cout<<sectot;
+	cout << endl<<flush;
 //
 //
 //
