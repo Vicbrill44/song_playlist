@@ -155,7 +155,7 @@ void DLL::moveDown(string s) {
 		temp->prev = NULL;
 		prevNode->next = NULL;
 		last = prevNode;
-		first = temp;//did where i fucked up
+		first = temp;
 	}
 
 
@@ -171,15 +171,9 @@ void DLL::makeRandom() {
 	while(temp != NULL){
 		nodeArr[counter] = temp;
 		temp = temp->next;
-		//cout<<nodeArr[counter]->song->title<<endl;
 		counter+=1;
 	}
 	counter = 0;
-
-	//cout<<first->song->title<<endl;
-	//nodeArr[0]->song->title = "booty"; //use dot notation when accessing a field of node inside of an array
-	//cout<<first->song->title<<endl;
-
 
 
 	randArr[0] = nodeArr[rand() % numSongs];
@@ -285,5 +279,4 @@ DLL::~DLL(){
 	}
 	first = NULL;
 	last = NULL;
-
 }
