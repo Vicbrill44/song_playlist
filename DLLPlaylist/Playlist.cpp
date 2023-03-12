@@ -362,11 +362,12 @@ Playlist::Playlist(string s) {
 //	 */
 //
 //
-//	list->makeRandom();
-//	list->printList();
-//	cout << "***************" << endl;
-//	list->makeRandom();
-//	list->printList();
+	cout<<"-------------"<<endl;
+	list->makeRandom();
+	list->printList();
+	cout << "***************" << endl;
+	list->makeRandom();
+	list->printList();
 //
 //
 //
@@ -410,8 +411,8 @@ Playlist::Playlist(string s) {
 //	 * Once you have it written, uncomment out the code below:
 //	 */
 //
-//	delete(list);
-//	cout << "Yep, deleted" << endl;
+	delete(list);
+	cout << "Yep, deleted" << endl;
 //
 //
 //	/* your output should be...
@@ -424,10 +425,10 @@ Playlist::Playlist(string s) {
 //	/* Step 9.5:  Uncomment out the code below to read in a new, longer list
 //	 */
 //
-//	list = new DLL();
-//	readList("MyListOfSongs.txt");
-//	list->printList();
-//	cout << endl;
+	list = new DLL();
+	readList("MyListOfSongs.txt");
+	list->printList();
+	cout << endl;
 //
 //
 //	/* If successful, you should get this:
@@ -488,7 +489,7 @@ Playlist::Playlist(string s) {
 //	*/
 //
 //
-//	//interface();
+	interface();
 //
 //
 //	/* Your output should go here */

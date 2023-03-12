@@ -162,6 +162,71 @@ void DLL::moveDown(string s) {
 
 }
 void DLL::makeRandom() {
+	DNode *temp = first;
+	DNode *nodeArr[numSongs];
+	DNode *randArr[numSongs];
+	int counter  = 0;
+	int validation = 1;//if 1 then let it happen
+	bool successful = false; //if 1 then success
+	while(temp != NULL){
+		nodeArr[counter] = temp;
+		temp = temp->next;
+		//cout<<nodeArr[counter]->song->title<<endl;
+		counter+=1;
+	}
+	counter = 0;
+
+	//cout<<first->song->title<<endl;
+	//nodeArr[0]->song->title = "booty"; //use dot notation when accessing a field of node inside of an array
+	//cout<<first->song->title<<endl;
+
+
+
+	randArr[0] = nodeArr[rand() % numSongs];
+	counter += 1;
+	randArr[0]->prev = NULL;
+	first = randArr[0]; //this is to link back to original first
+
+
+
+	for(int i = 1; i < numSongs; i++){
+		successful = false;
+		while(successful == false){
+			temp = nodeArr[rand() % numSongs];
+			for(int k = 0; k<counter; k++)
+			{
+				if(temp == randArr[k])
+				{
+					validation = 0;
+				}
+			}
+			if(validation == 1)
+			{
+				randArr[i] = temp;
+
+				randArr[i]->prev = randArr[i-1];
+				if(randArr[i]->prev == first)
+				{
+					first->next = randArr[i];
+				}
+				else
+				{
+					randArr[i-1]->next = randArr[i];
+				}
+
+				if(i == numSongs - 1)
+				{
+					randArr[i]->next = NULL;
+					last = randArr[i];
+				}
+				successful = true;
+				counter+=1;
+
+			}
+			validation = 1;
+		}
+	}
+
 }
 
 int DLL::remove(string s) {
@@ -212,4 +277,13 @@ int DLL::remove(string s) {
 
 
 DLL::~DLL(){
+	DNode *temp = first;
+	while(temp != nullptr){
+		DNode *nextNode = temp->next;
+		delete temp;
+		temp = nextNode;
+	}
+	first = NULL;
+	last = NULL;
+
 }
